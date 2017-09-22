@@ -4,22 +4,22 @@ body { font-family: arial, sans-serif; }
 
 h1 { color: navy; }
 
-.datepicker table tr td.day,
-.datepicker table tr td.day:hover {
+.datepicker-inline table tr td.day,
+.datepicker-inline table tr td.day:hover {
   background-color: green;
 }
 
-.datepicker table tr td.highlighted,
-.datepicker table tr td.highlighted:hover {
+.datepicker-inline table tr td.highlighted,
+.datepicker-inline table tr td.highlighted:hover {
   background-color: yellow;
 }
 
-.datepicker table tr td.day.old,
-.datepicker table tr td.day.new,
-.datepicker table tr td.disabled,
-.datepicker table tr td.disabled.highlighted,
-.datepicker table tr td.disabled:hover,
-.datepicker table tr td.disabled.highlighted:hover {
+.datepicker-inline table tr td.day.old,
+.datepicker-inline table tr td.day.new,
+.datepicker-inline table tr td.disabled,
+.datepicker-inline table tr td.disabled.highlighted,
+.datepicker-inline table tr td.disabled:hover,
+.datepicker-inline table tr td.disabled.highlighted:hover {
   color: gray;
   background-color: gray;
 }
