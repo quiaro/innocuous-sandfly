@@ -14,7 +14,12 @@ $('#startDate').val(now.toLocaleDateString('en-US'))
 
 $('#calendar').datepicker().hide();
 
+// Form submission
 $('input[type="submit"]').on('click', (e) => {
   e.preventDefault();
-  $('#calendar').show();
+
+  const startDate = $('#startDate').val();
+
+  $('#calendar').datepicker('setStartDate', startDate)
+                .show();
 })
