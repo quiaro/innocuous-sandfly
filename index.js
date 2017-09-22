@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import datepicker from 'bootstrap-datepicker'
+import holidays from './js/holidays'
 
 import './css/normalize.css';
 import 'bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.min.css'
@@ -26,4 +27,11 @@ $('input[type="submit"]').on('click', (e) => {
   $('#calendar').datepicker('setStartDate', startDate)
                 .datepicker('setEndDate', `+${numDays}d`)
                 .show();
+
+  // Get list of holidays
+  holidays.get().then(response => {
+    const holidayList = response.holidays.map(holiday => holiday.date);
+    console.log('holidays: ', holidayList);
+  });
+
 })
