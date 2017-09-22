@@ -15,6 +15,7 @@ function dateStringToDate(dateString) {
 // Attach datepicker to start date input so it's easier for users
 // to input date values
 const now = new Date();
+let holidayList = [];
 
 $('#startDate').val(now.toLocaleDateString('en-US'))
                .datepicker();
@@ -22,7 +23,12 @@ $('#startDate').val(now.toLocaleDateString('en-US'))
 $('#calendar').datepicker({
   daysOfWeekHighlighted: [0,6],
   beforeShowDay: (date) => {
-    console.log('Date is: ', date.toLocaleDateString('en-US'));
+    const currentDate = date.toLocaleDateString('en-US');
+    if (holidayList.indexOf(currentDate) >= 0) {
+      return {
+        classes: 'holiday'
+      }
+    }
   }
 }).hide();
 
@@ -39,8 +45,9 @@ $('input[type="submit"]').on('click', (e) => {
 
   // Get list of holidays
   holidays.get().then(response => {
-    const holidayList = response.holidays.map(holiday => dateStringToDate(holiday.date));
-    console.log('holidays: ', holidayList);
+    // After updating the list of holidays, refresh the calendar
+    holidayList = response.holidays.map(holiday => dateStringToDate(holiday.date));
+    $('#calendar').datepicker('update');
   });
 
 })
