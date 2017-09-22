@@ -12,4 +12,9 @@ const now = new Date();
 $('#startDate').val(now.toLocaleDateString('en-US'))
                .datepicker();
 
-$('#calendar').datepicker();
+$('#calendar').datepicker().hide();
+
+$('input[type="submit"]').on('click', (e) => {
+  e.preventDefault();
+  $('#calendar').show();
+})
