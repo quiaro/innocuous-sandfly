@@ -4,6 +4,11 @@ body { font-family: arial, sans-serif; }
 
 h1 { color: navy; }
 
+.datepicker table tr td.highlighted,
+.datepicker table tr td.highlighted:hover {
+  background-color: yellow;
+}
+
 .datepicker table tr td.disabled,
 .datepicker table tr td.disabled.highlighted,
 .datepicker table tr td.disabled:hover,
