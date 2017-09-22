@@ -19,7 +19,9 @@ $('input[type="submit"]').on('click', (e) => {
   e.preventDefault();
 
   const startDate = $('#startDate').val();
+  const numDays = $('#numberDays').val();
 
   $('#calendar').datepicker('setStartDate', startDate)
+                .datepicker('setEndDate', `+${numDays}d`)
                 .show();
 })
