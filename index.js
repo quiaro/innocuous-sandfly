@@ -38,15 +38,17 @@ $('input[type="submit"]').on('click', (e) => {
 
   const startDate = $('#startDate').val();
   const numDays = $('#numberDays').val();
+  const countryCode = $('#countryCode').val();
+  const year = 2008;
 
   $('#calendar').datepicker('setStartDate', startDate)
                 .datepicker('setEndDate', `+${numDays}d`)
                 .show();
 
   // Get list of holidays
-  holidays.get().then(response => {
+  holidays.get(countryCode, year).then(response => {
     // After updating the list of holidays, refresh the calendar
-    holidayList = response.holidays.map(holiday => dateStringToDate(holiday.date));
+    holidayList = Object.keys(response.holidays).map(holiday => dateStringToDate(holiday));
     $('#calendar').datepicker('update');
   });
 
