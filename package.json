@@ -1,0 +1,25 @@
+{
+  "name": "innocuous-sandfly",
+  "version": "1.0.0",
+  "description": "Web-based application that displays monthly calendars",
+  "main": "./index.js",
+  "scripts": {
+    "build": "rm -rf build && NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development webpack-dev-server -d --hot --inline --no-info --port 1357"
+  },
+  "author": "David Quiros",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-datepicker": "^1.7.1",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}
