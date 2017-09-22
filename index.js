@@ -12,7 +12,9 @@ const now = new Date();
 $('#startDate').val(now.toLocaleDateString('en-US'))
                .datepicker();
 
-$('#calendar').datepicker().hide();
+$('#calendar').datepicker({
+  'daysOfWeekHighlighted': [0,6]
+}).hide();
 
 // Form submission
 $('input[type="submit"]').on('click', (e) => {
